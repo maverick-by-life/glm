@@ -1,0 +1,166 @@
+@use "../default/mixins";
+@use "../variables" as *;
+
+.page-template-contacts {
+    .contacts {
+        .container {
+            padding-top: 54px;
+
+            @include mixins.laptopXL {
+                padding-top:    40px;
+                padding-bottom: 60px;
+            }
+
+            @include mixins.mobile {
+                padding-top:    20px;
+                padding-bottom: 40px;
+            }
+        }
+
+        .go-home {
+            margin-bottom: 20px;
+        }
+
+        .main-title {
+            margin-bottom: 80px;
+
+            @include mixins.laptopXL {
+                margin-bottom: 54px;
+            }
+
+            @include mixins.mobile {
+                margin-bottom: 24px;
+            }
+        }
+
+        &__inner {
+            display:               grid;
+            grid-template-columns: minmax(max-content, 648px) 1fr;
+            gap:                   40px 135px;
+
+            @include mixins.laptopXL {
+                grid-template-columns: minmax(max-content, 510px) 1fr;
+            }
+
+            @include mixins.laptop {
+                display:        flex;
+                flex-direction: column;
+                row-gap:        24px;
+            }
+        }
+
+        &__item {
+            &:nth-child(4) {
+                .contacts__row > div {
+
+                    @include mixins.mobile {
+                        width: 44%;
+                    }
+                }
+            }
+
+            &--last {
+                grid-column: 2/-1;
+
+                .contacts__row {
+                    > div {
+                        max-width: 300px;
+                    }
+
+                    span {
+                        display:       inline-block;
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+
+            p, a {
+                font-size:   20px;
+                line-height: 130%;
+
+                @include mixins.laptopXL {
+                    font-size: 16px;
+                }
+
+                @include mixins.mobile {
+                    font-size: 14px;
+                }
+            }
+
+            a {
+                @include mixins.hover {
+                    color: $red;
+                }
+            }
+        }
+
+        &__row {
+            display:    flex;
+            column-gap: 40px;
+            row-gap:    20px;
+            flex-wrap:  wrap;
+
+            @include mixins.mobile {
+                row-gap: 24px;
+            }
+
+            &.email-red {
+                a {
+                    color: $red;
+
+                    @include mixins.hover {
+                        color: $black;
+                    }
+                }
+            }
+
+            span {
+                display:    block;
+                margin-top: 8px;
+                font-size:  16px;
+
+                @include mixins.mobile {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        &__subtitle {
+            display:       block;
+            margin-bottom: 20px;
+            font-size:     18px;
+            color:         rgba(24, 24, 24, 0.4);
+
+            @include mixins.laptopXL {
+                font-size: 14px;
+            }
+
+            @include mixins.mobile {
+                font-size:     12px;
+                margin-bottom: 12px;
+            }
+        }
+
+        &__image {
+            width:   100%;
+            height:  519px;
+            display: flex;
+
+            @include mixins.laptopXL {
+                height: 324px;
+            }
+
+            @include mixins.mobile {
+                height: 406px;
+            }
+
+            img {
+                display:    block;
+                margin:     auto;
+                width:      100%;
+                height:     100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

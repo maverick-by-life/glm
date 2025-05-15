@@ -1,0 +1,553 @@
+@use "mixins" as *;
+@use "../variables" as *;
+
+a {
+    text-decoration: unset;
+    transition:      $transition color;
+    color:           inherit;
+
+    &[href^=tel] {
+        white-space: nowrap;
+    }
+}
+
+p {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size:   24px;
+    line-height: 117%;
+
+    @include laptopXL {
+        font-size: 16px;
+    }
+
+    @include mobile {
+        font-size: 14px;
+    }
+
+
+}
+
+h1, h2, h3, h4, h6 {
+    font-weight:    400;
+    font-family:    $second-family;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size:   120px;
+    line-height: 1;
+
+    @include laptopXL {
+        font-size: 72px;
+    }
+
+    @include mobile {
+        font-size: 50px;
+    }
+}
+
+h2 {
+    font-size:   54px;
+    line-height: 100%;
+
+    &.wp-block-heading.has-x-large-font-size {
+        margin-bottom: 40px;
+        font-size:     clamp(2.5rem, calc(1.59rem + 3.88vw), 6.25rem) !important;
+    }
+
+    @include mobile {
+        font-size: 28px;
+    }
+}
+
+h3 {
+    font-size:   40px;
+    line-height: 105%;
+
+    @include laptopXL {
+        font-size:   24px;
+        line-height: 108%;
+    }
+
+    @include mobile {
+        font-size:   20px;
+        line-height: 110%;
+    }
+}
+
+h4 {
+    font-size:   32px;
+    line-height: 100%;
+
+    @include mobile {
+        font-size: 18px;
+    }
+}
+
+
+h5 {
+    font-family:   $font-family;
+    font-weight:   600;
+    font-size:     24px;
+    line-height:   117%;
+    color:         $black;
+    margin-top:    32px;
+    margin-bottom: 28px;
+
+
+    @include laptopXL {
+        font-size:     16px;
+        margin-top:    28px;
+        margin-bottom: 20px;
+    }
+
+    @include mobile {
+        font-size:     14px;
+        margin-top:    24px;
+        margin-bottom: 16px;
+    }
+}
+
+h6 {
+    font-size:   18px;
+    line-height: 117%;
+
+    @include mobile {
+        font-size: 16px;
+    }
+}
+
+li {
+    font-weight: 400;
+    font-size:   24px;
+    line-height: 117%;
+
+    @include laptopXL {
+        font-size: 16px;
+    }
+    @include mobile {
+        font-size: 14px;
+    }
+}
+
+strong {
+    font-weight: 600;
+}
+
+ol.wp-block-list {
+    font-weight:   600;
+    font-size:     24px;
+    line-height:   117%;
+    margin-bottom: 32px;
+    padding-left:  28px;
+
+    @include laptopXL {
+        font-size:     16px;
+        margin-bottom: 24px;
+    }
+
+    @include mobile {
+        margin-bottom: 20px;
+        padding-left:  18px;
+        font-size:     14px;
+    }
+
+    > li {
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+
+        &::marker {
+            font-weight: 600;
+
+            @include laptopXL {
+                font-size: 16px;
+            }
+        }
+
+        strong {
+            display:       block;
+            font-weight:   600;
+            margin-bottom: 24px;
+
+            @include laptopXL {
+                font-size:     16px;
+                margin-bottom: 18px;
+            }
+
+            @include mobile {
+                line-height: 100%;
+            }
+
+        }
+
+        ul {
+            margin-left:   -28px;
+            margin-bottom: 0;
+
+            @include laptopXL {
+                margin-left: -20px;
+            }
+
+            @include mobile {
+                margin-left: -18px;
+            }
+
+        }
+    }
+}
+
+ul.wp-block-list {
+    margin-bottom: 32px;
+
+    @include laptopXL {
+        margin-bottom: 24px;
+    }
+    @include mobile {
+        margin-bottom: 20px;
+    }
+
+
+    li {
+        position:     relative;
+        padding-left: 27px;
+
+        @include laptopXL {
+            font-size: 16px;
+        }
+
+        @include mobile {
+            font-size: 14px;
+        }
+
+
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+
+        &::before {
+            content:          "";
+            display:          block;
+            width:            9px;
+            height:           9px;
+            position:         absolute;
+            background-color: $red;
+            top:              8px;
+            left:             2px;
+
+            @include laptopXL {
+                top: 4px;
+            }
+
+            @include mobile {
+                top: 2px;
+            }
+        }
+    }
+}
+
+blockquote {
+    position:      relative;
+    margin-bottom: 40px;
+    @include mobile {
+        padding-top: 40px;
+    }
+
+    &::before {
+        content:  url('data:image/svg+xml,<svg width="32" height="25" viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.52 12V24.72H0.8V13.32L6.56 -5.72205e-06H11.96L8.48 12H13.52ZM31.04 12V24.72H18.32V13.32L24.08 -5.72205e-06H29.48L26 12H31.04Z" fill="%23181818"/></svg>');
+        display:  block;
+        width:    40px;
+        height:   40px;
+        position: absolute;
+        top:      0;
+        left:     -54px;
+
+        @include mobile {
+            left: 0;
+            top:  0;
+        }
+    }
+}
+
+
+figure.wp-block-table,
+figure.wp-block-image {
+    margin: 40px 0 !important;
+    @include laptopXL {
+        margin: 32px 0 !important;
+    }
+    @include mobile {
+        margin: 24px 0 !important;
+    }
+}
+
+figcaption {
+    margin-top: 24px !important;
+
+    @include laptopXL {
+        margin-top: 14px !important;
+    }
+
+    @include mobile {
+        margin-top: 12px !important;
+    }
+
+    strong {
+        font-size:   20px;
+        line-height: 130%;
+
+        @include laptopXL {
+            font-size: 14px;
+        }
+
+        @include mobile {
+            font-size: 12px;
+        }
+    }
+}
+
+.wp-block-table {
+    margin-top: 40px;
+    max-width:  900px;
+    overflow-x: auto;
+
+    @include mobile {
+        min-width: 343px;
+    }
+
+    table {
+        width: max-content !important;
+
+        td {
+            border: none;
+        }
+
+        thead {
+            background-color: $gray-80;
+            border:           none;
+
+            tr {
+                color: $white;
+
+                th {
+                    padding:      14px 32px;
+                    border:       none;
+                    font-weight:  700;
+                    font-size:    20px;
+                    line-height:  140%;
+                    color:        $white;
+                    text-align:   center;
+                    border-right: 1px solid $white;
+
+                    @include laptopXL {
+                        width:     184px;
+                        font-size: 16px;
+                    }
+
+                    @include mobile {
+                        font-size: 14px;
+                        padding:   18px 12px;
+                    }
+
+                    &:last-child {
+                        border-right: none;
+                    }
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                text-align: center;
+
+                &:nth-child(odd) {
+                    background-color: $gray;
+                }
+
+                &:nth-child(even) {
+                    background-color: $white;
+                }
+            }
+
+            td {
+                width:        300px;
+                padding:      24px 32px;
+                font-size:    18px;
+                line-height:  140%;
+                color:        $gray-80;
+                text-align:   center;
+                border-right: 1px solid $black;
+
+                @include laptopXL {
+                    width:     184px;
+                    font-size: 16px;
+                }
+
+                @include mobile {
+                    font-size: 12px;
+                    padding:   18px 12px;
+                }
+
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+    }
+}
+
+.page-template-default .content__inner,
+.single-vacancies .vacancy__inner,
+.single-news .news-content__inner {
+    a:not(.btn) {
+        text-decoration:       underline;
+        text-decoration-color: $red;
+        text-underline-offset: 4px;
+        @include hover {
+            color: $red
+        }
+    }
+
+    h1.wp-block-heading,
+    h2 {
+        margin-bottom: 40px;
+    }
+
+    h3 {
+        margin-bottom: 40px;
+
+        @include laptopXL {
+            font-size: 26px;
+        }
+
+
+    }
+
+    h4, h6 {
+        margin-bottom: 32px;
+    }
+
+    @include laptopXL {
+        h1.wp-block-heading, h2, h3, h4, h6 {
+            margin-bottom: 32px;
+        }
+    }
+
+    @include mobile {
+        h1.wp-block-heading, h2, h3, h4, h6 {
+            margin-bottom: 24px;
+        }
+    }
+}
+
+
+.page-template-default {
+
+    &.privacy-policy, &.page-id-214 {
+        h1.main-title {
+            max-width: 1054px;
+        }
+
+        .content__inner {
+            max-width:     1054px;
+            padding-right: 154px;
+
+            @include laptopXL {
+                padding-right: 0;
+            }
+
+            h2.wp-block-heading {
+                margin-top: 70px;
+
+                @include laptopXL {
+                    margin-top: 50px;
+                }
+                @include mobile {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+
+    .page-default {
+        .container {
+            padding-top:    80px;
+            padding-bottom: 80px;
+            position:       relative;
+        }
+
+        .go-home {
+            position: absolute;
+            top:      80px;
+            left:     40px;
+
+            @include laptopXL {
+                top: 38px;
+            }
+
+            @include tablet {
+                position:      static;
+                margin-bottom: 16px;
+            }
+        }
+
+        .main-title {
+            max-width:    900px;
+            margin-left:  auto;
+            margin-right: auto;
+        }
+
+    }
+
+    .content {
+        background-color: $gray;
+
+        .container {
+            padding-top: 54px;
+        }
+
+        &__inner {
+            max-width:    900px;
+            margin-right: auto;
+            margin-left:  auto;
+
+            > p {
+                margin-bottom: 14px;
+
+                @include laptopXL {
+                    margin-bottom: 10px;
+                }
+
+                @include mobile {
+                    margin-bottom: 6px;
+                }
+            }
+        }
+    }
+}
+
+.wp-block-video {
+    margin-bottom: 40px;
+    position:      relative;
+    overflow:      hidden;
+
+    &__overlay {
+        width:               100%;
+        height:              100%;
+        position:            absolute;
+        top:                 0;
+        left:                0;
+        background-color:    rgba(0, 0, 0, 0.4);
+        background-image:    url('data:image/svg+xml,<svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="54" height="54" rx="3" fill="%23F1F1F3"/><path d="M18 21.2361C18 19.7493 19.5646 18.7823 20.8944 19.4472L32.4223 25.2111C33.8964 25.9482 33.8964 28.0518 32.4223 28.7889L20.8944 34.5528C19.5646 35.2177 18 34.2507 18 32.7639V21.2361Z" fill="%23E40E20"/></svg>');
+        background-repeat:   no-repeat;
+        background-position: center;
+        background-size:     65px;
+        z-index:             2;
+        cursor:              pointer;
+
+        &._playing {
+            opacity: 0;
+        }
+    }
+}

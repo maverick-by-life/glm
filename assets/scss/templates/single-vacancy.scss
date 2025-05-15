@@ -1,0 +1,141 @@
+@use "../default/mixins";
+@use "../variables" as *;
+
+.single-vacancies {
+    .vacancy-top {
+        .container {
+            padding-top:    54px;
+            padding-bottom: 80px;
+            position:       relative;
+
+            @include mixins.laptopXL {
+                padding-top:    40px;
+                padding-bottom: 54px;
+            }
+
+            @include mixins.mobile {
+                padding-top:    20px;
+                padding-bottom: 24px;
+            }
+        }
+
+        .go-home {
+            position: absolute;
+            top:      54px;
+            left:     40px;
+
+            @include mixins.laptopXL {
+                top: 38px;
+            }
+
+            @include mixins.tablet {
+                position:      static;
+                margin-bottom: 16px;
+            }
+        }
+
+        .main-title {
+            max-width:    1058px;
+            margin-left:  auto;
+            margin-right: auto;
+
+            @include mixins.laptopXL {
+                max-width: 650px;
+            }
+        }
+    }
+
+    .vacancy {
+        background-color: $gray;
+
+        &__inner {
+            max-width: 1058px;
+            margin:    0 auto;
+
+            @include mixins.laptopXL {
+                max-width: 650px;
+            }
+
+            > p {
+                margin-bottom: 24px;
+                @include mixins.laptopXL {
+                    margin-bottom: 18px;
+                }
+            }
+
+        }
+
+        &__info {
+            display:               grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap:                   80px 65px;
+            margin-bottom:         80px;
+
+            @include mixins.laptopXL {
+                gap:           54px 42px;
+                margin-bottom: 60px;
+            }
+
+            @include mixins.mobile {
+                display:        flex;
+                flex-direction: column;
+                row-gap:        24px;
+            }
+
+            b {
+                display:       block;
+                margin-bottom: 24px;
+                font-weight:   600;
+                font-size:     24px;
+
+                @include mixins.laptopXL {
+                    font-size: 16px;
+                }
+
+                @include mixins.mobile {
+                    line-height:   100%;
+                    font-size:     14px;
+                    margin-bottom: 8px;
+                }
+
+
+            }
+        }
+
+        &__link {
+            margin-top:    40px;
+            margin-bottom: 100px;
+
+            @include mixins.laptopXL {
+                margin-top:    32px;
+                margin-bottom: 60px;
+            }
+
+            @include mixins.mobile {
+                margin-top:    34px;
+                margin-bottom: 40px;
+            }
+        }
+
+        &__image {
+            width: 100%;
+
+            @include mixins.laptopXL {
+                height: 414px;
+            }
+
+            @include mixins.mobile {
+                height: 214px;
+            }
+
+            img {
+                max-width:  100%;
+                object-fit: cover;
+
+                @include mixins.laptopXL {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

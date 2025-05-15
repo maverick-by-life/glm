@@ -1,0 +1,424 @@
+@use "../default/mixins";
+@use "../variables" as *;
+
+.page-template-about {
+    .section-title {
+
+        @include mixins.laptop {
+            font-size: 58px;
+        }
+
+        @include mixins.tablet {
+            font-size: 50px;
+        }
+    }
+
+    .info {
+        .container {
+            padding-top:    54px;
+            padding-bottom: 100px;
+            padding-right:  197px;
+
+            @include mixins.laptopXL {
+                padding-top:    40px;
+                padding-bottom: 60px;
+                padding-right:  135px;
+            }
+
+            @include mixins.laptop {
+                padding-right: 40px;
+            }
+
+
+            @include mixins.mobile {
+                padding-top:    20px;
+                padding-bottom: 0;
+                padding-right:  20px;
+            }
+
+        }
+
+        .go-home {
+            margin-bottom: 20px;
+
+            @include mixins.laptopXL {
+                margin-bottom: 16px;
+            }
+        }
+
+        .main-title {
+            margin-bottom: 80px;
+
+            @include mixins.laptopXL {
+                margin-bottom: 52px;
+            }
+            @include mixins.mobile {
+                margin-bottom: 24px;
+            }
+        }
+
+        &__inner {
+            display:               grid;
+            grid-template-columns: minmax(0, 590px) minmax(560px, 1fr);
+            justify-content:       space-between;
+            column-gap:            80px;
+
+            @include mixins.tablet {
+                grid-template-columns: minmax(0, 370px) minmax(350px, 1fr);
+                column-gap:            50px;
+            }
+
+            @include mixins.mobile {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        &__image {
+            max-width: 590px;
+            min-width: 590px;
+
+            @include mixins.laptopXL {
+                max-width: 550px;
+                min-width: 370px;
+            }
+
+            @include mixins.laptop {
+                max-width: 370px;
+                min-width: 257px;
+            }
+
+            @include mixins.mobile {
+                max-width:     100%;
+                height:        211px;
+                margin-bottom: 20px;
+            }
+
+            img {
+                width:  83%;
+                height: auto;
+
+
+                @include mixins.laptopXL {
+                    width: 90%;
+                }
+
+                @include mixins.laptop {
+                    width: 100%;
+                }
+
+                @include mixins.mobile {
+                    height:     100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        &__description {
+            max-width:   900px;
+            margin-left: auto;
+
+            > p {
+                font-size:     24px;
+                line-height:   117%;
+                margin-bottom: 40px;
+
+                @include mixins.laptopXL {
+                    font-size:     16px;
+                    margin-bottom: 32px;
+                }
+
+                strong {
+                    font-weight: 600;
+                }
+
+                &:last-of-type {
+                    margin-bottom: 32px;
+
+                    @include mixins.mobile {
+                        margin-bottom: 18px;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .building {
+        background-color: $gray;
+
+        .container {
+            display:               grid;
+            grid-template-columns: minmax(0, 590px) minmax(560px, 1fr);
+            justify-content:       space-between;
+            column-gap:            80px;
+            padding-right:         197px;
+
+
+            @include mixins.laptopXL {
+                padding-right: 135px;
+            }
+
+            @include mixins.laptop {
+                padding-right: 40px;
+            }
+
+            @include mixins.tablet {
+                grid-template-columns: minmax(0, 1fr) minmax(350px, 1fr);
+                column-gap:            50px;
+            }
+
+            @include mixins.mobile {
+                display:       block;
+                padding-right: 20px;
+            }
+        }
+
+        .section-title {
+            max-width: 590px;
+            grid-row:  span 2;
+
+            @include mixins.laptopXL {
+                max-width: 550px;
+            }
+
+            @include mixins.mobile {
+                max-width:     100%;
+                margin-bottom: 24px;
+            }
+        }
+
+        .text {
+            margin-bottom: 40px;
+            margin-left:   auto;
+            max-width:     900px;
+
+            @include mixins.mobile {
+                margin-bottom: 20px;
+            }
+        }
+
+        &__image {
+            margin-left: auto;
+            max-width:   900px;
+            width:       100%;
+
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    .partner {
+        .container {
+            display:               grid;
+            grid-template-columns: minmax(0, 590px) minmax(560px, 1fr);
+            justify-content:       space-between;
+            column-gap:            80px;
+            padding-right:         197px;
+
+            @include mixins.laptopXL {
+                padding-right: 135px;
+            }
+
+            @include mixins.laptop {
+                padding-right: 40px;
+            }
+
+            @include mixins.tablet {
+                grid-template-columns: minmax(0, 1fr) minmax(350px, 1fr);
+                column-gap:            50px;
+            }
+
+            @include mixins.mobile {
+                display:       block;
+                padding-right: 20px;
+            }
+        }
+
+        .section-title {
+            @include mixins.laptopXL {
+                max-width: 550px;
+            }
+            @include mixins.mobile {
+                max-width:     590px;
+                margin-bottom: 24px;
+            }
+        }
+
+        .text {
+            margin-left: auto;
+            max-width:   900px;
+            width:       100%;
+
+            a {
+                text-decoration:       underline;
+                text-decoration-color: $red;
+                text-underline-offset: 2px;
+                @include mixins.hover {
+                    color: $red
+                }
+            }
+        }
+    }
+
+    .team {
+        background-color: $gray;
+
+        &__top {
+            display:               grid;
+            grid-template-columns: minmax(0, 590px) minmax(560px, 1fr);
+            justify-content:       space-between;
+            column-gap:            80px;
+            margin-bottom:         116px;
+            padding-right:         157px;
+
+            @include mixins.laptopXL {
+                padding-right: 95px;
+                margin-bottom: 58px;
+            }
+
+            @include mixins.laptop {
+                padding-right: 0;
+            }
+
+            @include mixins.tablet {
+                grid-template-columns: minmax(0, 1fr) minmax(350px, 1fr);
+                column-gap:            50px;
+            }
+
+            @include mixins.mobile {
+                display:       block;
+                margin-bottom: 24px;
+            }
+
+            .section-title {
+                max-width: 590px;
+                min-width: 590px;
+
+                @include mixins.laptopXL {
+                    max-width: 550px;
+                    min-width: 370px;
+                    width:     100%;
+                }
+
+                @include mixins.mobile {
+                    margin-bottom: 24px;
+                    min-width:     auto;
+                }
+            }
+
+            .text {
+                max-width:   900px;
+                min-width:   560px;
+                margin-left: auto;
+
+                @include mixins.laptopXL {
+                    max-width: 740px;
+                }
+
+                @include mixins.tablet {
+                    min-width: auto;
+                }
+
+                @include mixins.mobile {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+
+        &__list {
+            grid-column:           span 2;
+            display:               grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            @include mixins.laptop {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include mixins.mobile {
+                grid-template-columns: minmax(335px, 480px);
+                justify-content:       center;
+            }
+        }
+
+        &__item {
+            display:               grid;
+            grid-template-columns: minmax(200px, 233px) 1fr;
+            grid-template-rows: max-content max-content;
+            column-gap:            32px;
+            padding:               32px;
+            border:                1px solid $gray-80;
+            margin:                -1px 0 0 -1px;
+            background-color:      $gray;
+            position:              relative;
+
+            @include mixins.laptopXL {
+                grid-template-columns: 140px 1fr;
+                padding:               20px;
+                column-gap:            20px;
+            }
+
+            @include mixins.mobile {
+                width: 100%;
+            }
+
+            &::before {
+                content:        '';
+                display:        block;
+                width:          calc(100% + 2px);
+                height:         calc(100% + 2px);
+                position:       absolute;
+                pointer-events: none;
+                border:         1px solid transparent;
+                top:            0;
+                left:           0;
+                margin:         -1px 0 0 -1px;
+                z-index:        1;
+            }
+
+            @include mixins.hover {
+                border-color: transparent;
+
+                &:before {
+                    border-color: $red;
+                }
+                .team__image {
+                    filter: grayscale(0);
+                }
+
+            }
+
+            h3 {
+                margin-bottom: 24px;
+
+                @include mixins.laptopXL {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        &__image {
+            grid-row: 1/4;
+            height:   330px;
+            filter:   grayscale(100);
+
+            @include mixins.laptopXL {
+                height: 198px;
+            }
+
+            @include mixins.mobile {
+                filter: grayscale(0);
+            }
+
+            img {
+                width:      100%;
+                height:     100%;
+                object-fit: cover;
+            }
+        }
+
+    }
+
+}

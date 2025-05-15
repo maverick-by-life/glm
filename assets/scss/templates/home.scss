@@ -1,0 +1,562 @@
+@use "../default/mixins";
+@use "../variables" as *;
+
+.home {
+    .f-button.is-close-btn {
+        top:   20px;
+        right: 20px;
+    }
+
+    .first-screen {
+        .container {
+            display:                grid;
+            grid-template-columns:  max(1150px) 1fr;
+            color:                  $black;
+            padding-top:            54px;
+            padding-bottom:         0;
+            margin-bottom:          97px;
+
+            @include mixins.laptopXL {
+                grid-template-columns:  max(677px) 1fr;
+                padding-top:            40px;
+                margin-bottom:          48px;
+            }
+
+            @include mixins.tablet {
+                grid-template-columns:  minmax(100px, 440px) 1fr;
+            }
+
+            @include mixins.mobile {
+                display:       block;
+                margin-bottom: 53px;
+            }
+        }
+
+        &__title {
+            margin-top:    -27px;
+            margin-bottom: 10px;
+            font-family:   $second-family;
+            font-size:     120px;
+
+            @include mixins.laptopXL {
+                font-size:     72px;
+                margin-bottom: 4px;
+            }
+
+            @include mixins.tablet {
+                font-size: 60px;
+            }
+
+            @include mixins.mobile {
+                font-size:  50px;
+                margin-top: -10px;
+            }
+
+            & + p {
+                max-width:   497px;
+                font-size:   24px;
+                line-height: 117%;
+
+                @include mixins.laptopXL {
+                    font-size: 16px;
+                }
+
+                @include mixins.mobile {
+                    font-size:     14px;
+                    margin-bottom: 24px;
+                }
+            }
+        }
+
+        &__link {
+            grid-row:     1/2;
+            grid-column:  2/3;
+            justify-self: end;
+
+            @include mixins.laptop {
+                padding: 0 10px;
+            }
+        }
+
+        &__image {
+            width:  100%;
+            height: 519px;
+
+            //@include mixins.large {
+            //  height: 692px;
+            //}
+            @include mixins.laptopXL {
+                height: auto;
+            }
+
+            @include mixins.mobile {
+                height: 406px;
+            }
+
+
+            img {
+                display:         block;
+                max-width:       100%;
+                height:          100%;
+                object-fit:      cover;
+                margin:          0 auto;
+                object-position: left;
+
+                @include mixins.tablet {
+                    min-height: 324px;
+                }
+
+                @include mixins.mobile {
+                    object-position: center;
+                    width:           100%;
+                }
+            }
+        }
+    }
+
+    .about {
+        background-color: $gray;
+
+        &__top {
+            display:         flex;
+            justify-content: space-between;
+            gap:             20px;
+            margin-bottom:   100px;
+
+            @include mixins.laptopXL {
+                margin-bottom: 60px;
+            }
+
+            @include mixins.mobile {
+                flex-direction: column;
+                margin-bottom:  40px;
+            }
+
+        }
+
+        &__info {
+            max-width: 1014px;
+
+            @include mixins.laptopXL {
+                max-width: 624px;
+            }
+
+            @include mixins.laptop {
+                max-width: 600px;
+            }
+
+            @include mixins.tablet {
+                max-width: 360px;
+            }
+
+            strong {
+                display:       block;
+                margin-bottom: 24px;
+                font-weight:   600;
+                font-size:     24px;
+                line-height:   117%;
+
+                @include mixins.laptopXL {
+                    font-size:     16px;
+                    margin-bottom: 18px;
+                }
+
+                @include mixins.mobile {
+                    font-size:     14px;
+                    margin-bottom: 12px;
+                }
+            }
+        }
+
+        &__description {
+            margin-bottom: 40px;
+
+            @include mixins.laptopXL {
+                margin-bottom: 32px;
+            }
+        }
+
+        &__stat {
+            display: flex;
+
+            @include mixins.mobile {
+                flex-direction: column;
+            }
+        }
+
+        &__item {
+            padding:      168px 32px 32px;
+            border:       1px solid $gray-80;
+            border-right: none;
+
+
+            &:nth-child(1) {
+                width: 42.6%;
+
+                @include mixins.mobile {
+                    border-bottom: none;
+                }
+            }
+
+            &:nth-child(2) {
+                width: 28.7%;
+
+                @include mixins.mobile {
+                    border-bottom: none;
+                }
+            }
+
+            &:nth-child(3) {
+                width:        28.7%;
+                border-right: 1px solid $gray-80;
+            }
+
+            &:nth-child(n+1) {
+                @include mixins.tablet {
+                    width: 33.3%;
+                }
+
+                @include mixins.mobile {
+                    width: 100%;
+                }
+            }
+
+            @include mixins.laptopXL {
+                padding: 126px 20px 20px;
+            }
+
+            @include mixins.tablet {
+                padding: 66px 12px 12px;
+            }
+
+
+            @include mixins.mobile {
+                border-right: 1px solid $gray-80;
+                padding-top:  24px;
+            }
+
+        }
+
+        &__num {
+            font-family: $second-family;
+            font-size:   100px;
+            width:       max-content;
+
+            @include mixins.laptopXL {
+                font-size: 60px;
+            }
+
+            @include mixins.laptop {
+                font-size: 40px;
+            }
+
+            @include mixins.tablet {
+                font-size: 32px;
+            }
+
+            span {
+                font-size: 150px;
+
+                @include mixins.large {
+                    font-size: 200px;
+                }
+
+                @include mixins.laptopXL {
+                    font-size: 120px;
+                }
+                @include mixins.laptop {
+                    font-size: 100px;
+                }
+                @include mixins.tablet {
+                    font-size: 80px;
+                }
+
+            }
+        }
+    }
+
+    .advantages {
+        .container {
+            display:               grid;
+            grid-template-columns: 42.6% 1fr;
+            column-gap:            40px;
+
+            @include mixins.laptopXL {
+                grid-template-columns: minmax(100px, 435px) 1fr;
+            }
+
+            @include mixins.laptop {
+                grid-template-columns: minmax(100px, 345px) 1fr;
+            }
+
+            @include mixins.tablet {
+                display: block;
+            }
+        }
+
+        .section-title {
+            max-width:     634px;
+            height:        max-content;
+            margin-bottom: 10px;
+
+            @include mixins.laptopXL {
+                margin-bottom: 8px;
+            }
+        }
+
+        &__text {
+            max-width: 634px;
+
+            @include mixins.tablet {
+                margin-bottom: 30px;
+            }
+        }
+
+        &__list {
+            display:               grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row:              1/4;
+            grid-column:           2/3;
+
+
+            @include mixins.laptopXL {
+                grid-template-columns: repeat(2, minmax(0, 323px));
+                justify-content:       end;
+            }
+
+            @include mixins.tablet {
+                justify-content: start;
+            }
+
+            @include mixins.mobile {
+                justify-content:       center;
+                grid-template-columns: minmax(335px, 480px);
+            }
+
+        }
+
+        &__item {
+            padding:          32px;
+            border:           1px solid $gray-80;
+            margin:           -1px 0 0 -1px;
+            background-color: $white;
+            position:         relative;
+            transition:       border-color $transition;
+
+            &::before {
+                content:        '';
+                display:        block;
+                width:          calc(100% + 2px);
+                height:         calc(100% + 2px);
+                position:       absolute;
+                pointer-events: none;
+                border:         1px solid transparent;
+                top:            0;
+                left:           0;
+                margin:         -1px 0 0 -1px;
+                z-index:        1;
+                transition:     border-color $transition;
+            }
+
+
+            @include mixins.hover {
+                border-color: transparent;
+                &:before {
+                    border-color: $red;
+                }
+                .advantages__icon {
+                    filter: grayscale(0);
+                }
+            }
+
+            @include mixins.laptopXL {
+                padding: 20px;
+            }
+
+            @include mixins.mobile {
+                padding: 12px;
+            }
+
+            h3 {
+                margin-bottom: 24px;
+
+                @include mixins.laptopXL {
+                    margin-bottom: 16px;
+                }
+
+                @include mixins.mobile {
+                    margin-bottom: 14px;
+                }
+            }
+
+            a {
+                display:               inline-block;
+                width:                 fit-content;
+                margin-top:            24px;
+                font-size:             20px;
+                text-decoration:       underline;
+                text-underline-offset: 4px;
+                text-decoration-color: $red;
+                transition:            all $transition;
+
+                @include mixins.hover {
+                    color: $red;
+                }
+
+                @include mixins.laptopXL {
+                    font-size:  14px;
+                    margin-top: 14px;
+                }
+            }
+        }
+
+        &__icon {
+            filter:        grayscale(100%);
+            width:         80px;
+            height:        80px;
+            margin-bottom: 32px;
+            transition:    filter $transition;
+
+            @include mixins.laptopXL {
+                width:         54px;
+                height:        54px;
+                margin-bottom: 20px;
+            }
+
+            @include mixins.mobile {
+                width:         40px;
+                height:        40px;
+                margin-bottom: 16px;
+            }
+
+            img {
+                max-width:  100%;
+                max-height: 100%;
+            }
+        }
+
+    }
+
+    .gallery {
+        background-color: $gray;
+        padding-top:      86px;
+        padding-bottom:   100px;
+        padding-left:     40px;
+
+        @include mixins.laptopXL {
+            padding-top:    53px;
+            padding-bottom: 60px;
+        }
+
+        @include mixins.mobile {
+            padding: 40px 20px;
+        }
+
+
+        &-home {
+            .section-title {
+                margin-top:    0;
+                margin-bottom: 80px;
+
+                @include mixins.laptopXL {
+                    margin-top:    0;
+                    margin-bottom: 54px;
+                }
+
+                @include mixins.mobile {
+                    margin-bottom: 24px;
+                }
+            }
+
+            .swiper-wrapper {
+                margin-bottom: 40px;
+
+                @include mixins.laptopXL {
+                    margin-bottom: 32px;
+                }
+
+                @include mixins.mobile {
+                    margin-bottom: 20px;
+                }
+            }
+
+            .swiper-slide {
+                width:      max-content;
+                height:     600px;
+                display:    flex;
+                object-fit: cover;
+
+                @include mixins.laptopXL {
+                    height: 326px;
+                }
+
+                @include mixins.mobile {
+                    height: 260px;
+                }
+
+                img {
+                    display:    block;
+                    margin:     auto;
+                    box-sizing: border-box;
+                    max-width:  100%;
+                    max-height: 100%;
+                    height:     100%;
+
+                }
+            }
+        }
+    }
+
+    .vacancies {
+        &__top {
+            display:         flex;
+            justify-content: space-between;
+            align-items:     center;
+            margin-bottom:   70px;
+
+            @include mixins.mobile {
+                flex-direction: column;
+                margin-bottom:  24px;
+                align-items:    flex-start;
+            }
+
+            .section-title {
+                @include mixins.mobile {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+
+    .news {
+        background-color: $gray;
+
+        &__top {
+            display:         flex;
+            justify-content: space-between;
+            align-items:     center;
+            margin-bottom:   70px;
+
+            @include mixins.mobile {
+                flex-direction: column;
+                align-items:    flex-start;
+                margin-bottom:  24px;
+            }
+
+            .section-title {
+                @include mixins.mobile {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+
+        .news-list {
+            &__item {
+                background-color: $gray;
+                @include mixins.hover {
+                    background-color: $gray-80
+                }
+            }
+        }
+    }
+}

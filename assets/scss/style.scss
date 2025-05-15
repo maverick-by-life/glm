@@ -1,0 +1,29 @@
+/*!
+Theme Name: Global mining
+Version: 1.0
+Author: Двоичный кот
+Author URI: https://01cat.ru
+*/
+@use "libriary/swiper-bundle.min";
+@use "libriary/sal";
+@use "libriary/fancybox";
+
+@use "default/reset";
+@use "default/fonts";
+//@use "default/mixins";
+@use "default/base";
+@use "default/text";
+
+@use "components/header";
+@use "components/footer";
+@use "components/forms";
+@use "components/vacancies-list";
+@use "components/news-list";
+
+@use "templates/home";
+@use "templates/error";
+@use "templates/about";
+@use "templates/contacts";
+@use "templates/archive";
+@use "templates/single-vacancy";
+@use "templates/single-news";

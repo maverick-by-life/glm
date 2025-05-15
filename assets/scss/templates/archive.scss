@@ -1,0 +1,120 @@
+@use "../default/mixins";
+@use "../variables" as *;
+
+.archive {
+  .vacancies {
+    .container {
+      padding-top: 54px;
+
+      @include mixins.laptopXL {
+        padding-top:    40px;
+        padding-bottom: 60px;
+      }
+
+      @include mixins.mobile {
+        padding-top:    20px;
+        padding-bottom: 40px;
+      }
+    }
+
+    .go-home {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      span {
+        color: $gray;
+      }
+    }
+
+    &__top {
+      display:         flex;
+      justify-content: space-between;
+      margin-bottom:   80px;
+
+      @include mixins.laptopXL {
+        margin-bottom: 57px;
+      }
+
+      @include mixins.mobile {
+        flex-direction: column;
+        row-gap:        24px;
+        margin-bottom:  24px;
+      }
+
+    }
+
+    &__contact {
+      display:        flex;
+      flex-direction: column;
+      align-items:    flex-end;
+      text-align:     right;
+
+      p {
+        margin-bottom: 20px;
+        font-size:     18px;
+        color:         rgba(24, 24, 24, 0.4);
+
+        @include mixins.laptopXL {
+          margin-bottom: 14px;
+          font-size:     12px;
+        }
+      }
+
+      a {
+        display:       block;
+        margin-bottom: 8px;
+        font-size:     20px;
+
+        @include mixins.laptopXL {
+          font-size: 14px;
+        }
+
+        @include mixins.hover {
+          color: $red;
+        }
+
+        span {
+          font-size: 16px;
+
+          @include mixins.laptopXL {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  .news {
+    .container {
+      padding-top: 54px;
+
+      @include mixins.laptopXL {
+        padding-top:    40px;
+        padding-bottom: 60px;
+      }
+
+      @include mixins.mobile {
+        padding-top:    20px;
+        padding-bottom: 40px;
+      }
+    }
+
+    .go-home {
+      margin-bottom: 20px;
+    }
+
+    .main-title {
+      margin-bottom: 80px;
+
+
+      @include mixins.laptopXL {
+        margin-bottom: 54px;
+      }
+
+      @include mixins.mobile {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}

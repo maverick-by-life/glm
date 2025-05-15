@@ -1,0 +1,397 @@
+@use "../default/mixins";
+@use "../variables" as *;
+
+.popup {
+  &.fancybox__content {
+    .f-button.is-close-btn {
+      svg {
+        width:  18px;
+        height: 18px;
+        stroke: $black;
+      }
+
+      @include mixins.hover {
+        svg {
+          stroke: $red;
+        }
+      }
+    }
+  }
+
+  &__title {
+
+    h3 {
+      font-size:     54px;
+      width:         95%;
+      margin-bottom: 24px;
+      color: $black;
+
+      @include mixins.laptopXL {
+        font-size:     40px;
+        margin-bottom: 20px;
+        width:         85%;
+      }
+
+      @include mixins.mobile {
+        font-size:     32px;
+        margin-bottom: 14px;
+      }
+    }
+
+    p {
+      margin-bottom: 30px;
+      color: $black;
+
+      @include mixins.mobile {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.callback-popup {
+  max-width: 742px;
+
+  @include mixins.laptopXL {
+    max-width: 560px;
+    padding:   20px;
+  }
+
+  @include mixins.mobile {
+    max-width: 335px;
+    padding:   12px;
+  }
+
+}
+
+.form {
+  &__row {
+    margin-bottom: 22px;
+
+    @include mixins.laptopXL {
+      margin-bottom: 18px;
+    }
+
+    @include mixins.mobile {
+      margin-bottom: 12px;
+    }
+
+    &--submit {
+      margin-bottom: 0;
+      margin-top:    32px;
+
+      @include mixins.mobile {
+        margin-top: 24px;
+      }
+    }
+  }
+
+  &__label {
+    margin-bottom: 10px;
+    color: $black;
+    label {
+      font-size:   20px;
+      line-height: 130%;
+
+      @include mixins.laptopXL {
+        font-size: 16px;
+      }
+
+      @include mixins.mobile {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__input {
+    input[type="text"], input[type="email"] {
+      border:      1px solid $black;
+      padding:     22px 16px;
+      width:       100%;
+      height:      58px;
+      font-family: $font-family;
+      font-weight: 400;
+      font-size:   20px;
+      line-height: 130%;
+      color:       $black;
+
+      &[aria-invalid="true"] {
+        border-color: $red;
+      }
+
+      &::placeholder {
+        color: rgba(24, 24, 24, 0.5)
+      }
+
+      @include mixins.laptopXL {
+        padding:   7px 16px;
+        height:    44px;
+        font-size: 14px;
+      }
+
+      @include mixins.mobile {
+        height:    40px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .wpcf7-not-valid-tip {
+    padding-top: 5px;
+    font-size:   14px;
+    color:       $red;
+  }
+
+  .wpcf7-response-output {
+    display:        none !important;
+    position:       absolute;
+    z-index:        -1;
+    opacity:        0;
+    pointer-events: none;
+  }
+
+  .wpcf7-list-item {
+    margin-left: 0;
+  }
+
+  .wpcf7-list-item-label {
+    position:     relative;
+    display:      block;
+    padding-left: 56px;
+    font-family:  $font-family;
+    font-weight:  400;
+    font-size:    20px;
+    line-height:  130%;
+    color:        $black;
+
+    @include mixins.laptopXL {
+      font-size: 14px;
+      padding-left: 50px;
+    }
+
+    @include mixins.mobile {
+      font-size: 12px;
+    }
+
+    &::after {
+      content:       '';
+      width:         32px;
+      height:        32px;
+      position:      absolute;
+      left:          0;
+      top:           4px;
+      display:       block;
+      border-radius: 3px;
+      border:        1px solid rgba(63, 63, 63, 0.4);
+      z-index:       1;
+    }
+
+    a {
+      text-decoration:       underline;
+      text-decoration-color: $red;
+      text-underline-offset: 4px;
+
+      @include mixins.hover {
+        color: $red;
+      }
+    }
+  }
+
+  input[name="terms-of-use"] {
+    position: absolute;
+    z-index:  -1;
+
+    &[aria-invalid="true"] + .wpcf7-list-item-label {
+      color: $red;
+
+      &::after {
+        border-color: $red;
+      }
+    }
+
+    &:checked + .wpcf7-list-item-label {
+      &::after {
+        border-color: transparent;
+        content:      url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="3" fill="%232A2A2A"/><path d="M9 18L13 21L22 10" stroke="white" stroke-width="2"/></svg>');
+      }
+    }
+
+
+  }
+
+  .codedropz-upload-handler {
+    border: 1px solid $black;
+  }
+
+  .codedropz-upload-container {
+    height:  180px;
+    display: flex;
+
+    @include mixins.laptopXL {
+      height: 140px;
+    }
+
+    @include mixins.mobile {
+      height: 120px;
+    }
+  }
+
+  .codedropz-upload-inner {
+    display:         flex;
+    justify-content: center;
+    margin:          auto;
+    flex-wrap:       wrap;
+    gap:             5px;
+
+    h6 {
+      text-transform: none;
+
+      &:first-of-type {
+        order: 1;
+      }
+
+      &:last-of-type {
+        order: 4;
+        width: 100%;
+      }
+    }
+
+    span {
+      order: 2;
+    }
+
+    .codedropz-btn-wrap {
+      order: 3;
+
+      a {
+        text-decoration:       underline;
+        text-decoration-color: $red;
+        text-underline-offset: 4px;
+
+        @include mixins.hover {
+          color: $red;
+        }
+      }
+    }
+
+    a, h6, span {
+      font-family: $font-family;
+      font-weight: 400;
+      font-size:   20px;
+      line-height: 130%;
+      text-align:  center;
+      color:       rgba(24, 24, 24, 0.5);
+
+      @include mixins.laptopXL {
+        font-size: 14px;
+      }
+
+      @include mixins.mobile {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.success-popup,
+.failed-popup {
+  max-width:  702px;
+  padding:    80px 58px;
+  text-align: center;
+
+  @include mixins.laptopXL {
+    max-width: 470px;
+    padding:   54px 20px;
+  }
+
+  @include mixins.mobile {
+    max-width: 335px;
+    padding:   32px 12px;
+  }
+
+  .popup__title {
+    h3 {
+      width: 100%;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  > svg {
+    margin: 0 auto 54px;
+
+    @include mixins.laptopXL {
+      margin-bottom: 32px;
+    }
+    @include mixins.mobile {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.failed-popup {
+  .popup__contacts {
+    display:         flex;
+    align-items:     center;
+    justify-content: space-between;
+    column-gap:      20px;
+    padding-top:     54px;
+
+    @include mixins.laptopXL {
+      flex-direction: column;
+      row-gap:        15px;
+      padding-top:    32px;
+      padding-left:   93px;
+      align-items:    flex-start;
+    }
+
+    @include mixins.mobile {
+      padding-top:  24px;
+      padding-left: 37px;
+    }
+
+    a {
+      display:     flex;
+      align-items: center;
+      font-size:   20px;
+      column-gap:  24px;
+
+      @include mixins.laptopXL {
+        font-size:  16px;
+        column-gap: 14px;
+      }
+
+      @include mixins.mobile {
+        font-size: 14px;
+      }
+
+      @include mixins.hover {
+        color: $red;
+        svg {
+          rect {
+            fill: $gray-80
+          }
+
+          rect {
+            stroke: $white;
+          }
+
+          path {
+            fill: $white;
+          }
+        }
+      }
+
+      svg {
+        @include mixins.laptopXL {
+          width:  32px;
+          height: 32px;
+        }
+
+      }
+    }
+  }
+}
+

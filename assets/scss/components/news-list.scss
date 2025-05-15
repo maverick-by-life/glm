@@ -1,0 +1,156 @@
+@use "../default/mixins";
+@use "../variables" as *;
+
+.news-list {
+    width:                 100%;
+    display:               grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include mixins.mobile {
+        display:         flex;
+        flex-direction:  column;
+        align-items:     center;
+        justify-content: center;
+    }
+
+    &__item {
+        display:          flex;
+        flex-direction:   column;
+        padding:          32px;
+        border:           1px solid $gray-80;
+        margin:           -1px 0 0 -1px;
+        background-color: $white;
+        transition:       all $transition;
+
+        &:not(:nth-child(-n+3)) {
+            .news-list__image {
+                display: none;
+            }
+        }
+
+
+        @include mixins.hover {
+            background-color: $gray-80;
+            h3, p, span {
+                color: $white;
+            }
+        }
+
+        @include mixins.laptopXL {
+            padding: 20px;
+        }
+
+        @include mixins.mobile {
+            padding:   12px;
+            min-width: 335px;
+            max-width: 480px;
+            width:     100%;
+        }
+    }
+
+    &__image {
+        width:         100%;
+        max-height:    550px;
+        margin-bottom: 24px;
+
+        @include mixins.laptopXL {
+            max-height:    334px;
+            margin-bottom: 18px;
+        }
+
+        @include mixins.mobile {
+            height:        181px;
+            margin-bottom: 12px;
+        }
+
+        img {
+            max-width:  100%;
+            height:     auto;
+            object-fit: cover;
+
+            @include mixins.laptopXL {
+                height: 100%;
+            }
+        }
+    }
+
+    &__link {
+        max-width: max-content;
+    }
+
+    h3, p, span {
+        transition: all $transition;
+
+    }
+
+    h3 {
+        @include mixins.mobile {
+            font-size: 22px;
+        }
+    }
+
+    span {
+        display:       block;
+        margin-bottom: 24px;
+        font-size:     20px;
+        line-height:   130%;
+        color:         $gray-80;
+
+        @include mixins.laptopXL {
+            font-size:     14px;
+            margin-bottom: 16px;
+        }
+
+        @include mixins.mobile {
+            font-size: 12px;
+        }
+
+    }
+
+    p.text {
+        margin-bottom: 35px;
+        flex:          1 0 auto;
+
+        @include mixins.laptopXL {
+            overflow:           hidden;
+            display:            -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            margin-bottom:      30px;
+        }
+
+    }
+
+    &__wrapper {
+        margin-bottom:      26px;
+        overflow:           hidden;
+        display:            -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+
+        @include mixins.laptopXL {
+            margin-bottom: 16px;
+        }
+
+        @include mixins.hover {
+            h3 {
+                color: $red;
+            }
+        }
+    }
+
+    &__link.btn {
+        transition: all $transition;
+
+        @include mixins.hover {
+            background-color: $white;
+            color:            $black;
+        }
+
+        @include mixins.mobile {
+            width:     100%;
+            max-width: 100%;
+        }
+    }
+
+}
